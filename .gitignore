@@ -1,5 +1,5 @@
 # EmailJS Configuration (contains sensitive keys)
-config.js
+#config.js
 
 # OS files
 .DS_Store

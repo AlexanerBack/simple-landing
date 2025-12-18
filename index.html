@@ -50,7 +50,6 @@
         "@type": "Organization",
         "name": "WebCo Solutions",
         "url": "https://webco-solutions.com",
-        "logo": "https://webco-solutions.com/logo.png",
         "description": "Профессиональная разработка веб-сайтов, веб-приложений и онлайн решений",
         "address": {
             "@type": "PostalAddress",
@@ -58,7 +57,7 @@
         },
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+48-728-535-130",
+            "email": "sales@webco-solutions.online",
             "contactType": "customer service",
             "availableLanguage": ["Russian", "Ukrainian", "Polish", "English"]
         },
@@ -156,13 +155,6 @@
 <body>
     <!-- SVG Icons Sprite -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="icon-logo" viewBox="0 0 200 40" fill="none">
-            <path d="M8 8c-2 0-4 1.5-4 4v16c0 2.5 2 4 4 4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 8c2 0 4 1.5 4 4v16c0 2.5-2 4-4 4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="30" y="26" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="currentColor">WebCo Solutions</text>
-            <path d="M192 8c2 0 4 1.5 4 4v16c0 2.5-2 4-4 4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M192 8c-2 0-4 1.5-4 4v16c0 2.5 2 4 4 4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </symbol>
         <symbol id="icon-target" viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
             <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -186,6 +178,11 @@
             <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
             <path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </symbol>
+        <symbol id="icon-telegram" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M8 12l8-4-4 8-2-2-2-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 10l-4 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
         <symbol id="icon-phone" viewBox="0 0 24 24" fill="none">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </symbol>
@@ -202,7 +199,7 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <img src="logo.png" alt="WebCo Solutions" class="logo-icon">
+                    <span>WebCo Solutions</span>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home">Главная</a></li>
@@ -211,24 +208,45 @@
                     <li><a href="#pricing">Расценки</a></li>
                     <li><a href="#process">Процесс</a></li>
                     <li><a href="#contact" class="btn-nav">Связаться</a></li>
-                    <li class="language-switcher-mobile">
-                        <div class="language-switcher">
-                            <button class="lang-btn" id="langBtn" aria-label="Language selector">
-                                <span class="lang-current">RU</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <li class="mobile-controls">
+                        <div class="mobile-controls-wrapper">
+                            <button class="theme-toggle theme-toggle-mobile-menu" id="themeToggleMobile" aria-label="Toggle theme">
+                                <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                            <div class="lang-dropdown" id="langDropdown">
-                                <button class="lang-option" data-lang="ru">Русский</button>
-                                <button class="lang-option" data-lang="uk">Українська</button>
-                                <button class="lang-option" data-lang="pl">Polski</button>
-                                <button class="lang-option" data-lang="en">English</button>
+                            <div class="language-switcher language-switcher-mobile">
+                                <button class="lang-btn" id="langBtn" aria-label="Language selector">
+                                    <span class="lang-current">RU</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <div class="lang-dropdown" id="langDropdown">
+                                    <button class="lang-option" data-lang="ru">Русский</button>
+                                    <button class="lang-option" data-lang="uk">Українська</button>
+                                    <button class="lang-option" data-lang="pl">Polski</button>
+                                    <button class="lang-option" data-lang="en">English</button>
+                                </div>
                             </div>
                         </div>
                     </li>
                 </ul>
-                <div class="language-switcher language-switcher-desktop">
+                <div class="nav-controls">
+                    <button class="theme-toggle theme-toggle-desktop" id="themeToggle" aria-label="Toggle theme">
+                        <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="language-switcher language-switcher-desktop">
                     <button class="lang-btn" id="langBtnDesktop" aria-label="Language selector">
                         <span class="lang-current">RU</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -284,8 +302,45 @@
                 <a href="#contact" class="btn btn-primary">Начать проект</a>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
+        <div class="hero-icons">
+            <svg class="hero-icon icon-code" width="80" height="80" viewBox="0 0 24 24" fill="none">
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="hero-icon icon-browser" width="70" height="70" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M2 8h20" stroke="currentColor" stroke-width="2"/>
+                <circle cx="6" cy="6" r="1" fill="currentColor"/>
+                <circle cx="9" cy="6" r="1" fill="currentColor"/>
+                <circle cx="12" cy="6" r="1" fill="currentColor"/>
+            </svg>
+            <svg class="hero-icon icon-server" width="75" height="75" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="3" width="20" height="4" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+                <rect x="2" y="10" width="20" height="4" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+                <rect x="2" y="17" width="20" height="4" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="18" cy="5" r="1" fill="currentColor"/>
+                <circle cx="18" cy="12" r="1" fill="currentColor"/>
+                <circle cx="18" cy="19" r="1" fill="currentColor"/>
+            </svg>
+            <svg class="hero-icon icon-database" width="65" height="65" viewBox="0 0 24 24" fill="none">
+                <ellipse cx="12" cy="5" rx="9" ry="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" stroke="currentColor" stroke-width="2" fill="none"/>
+                <ellipse cx="12" cy="19" rx="9" ry="3" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <svg class="hero-icon icon-design" width="72" height="72" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M9 9h6M9 15h6M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="hero-icon icon-api" width="68" height="68" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <svg class="hero-icon icon-mobile" width="60" height="60" viewBox="0 0 24 24" fill="none">
+                <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="hero-icon icon-cloud" width="70" height="70" viewBox="0 0 24 24" fill="none">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
     </section>
 
@@ -599,8 +654,8 @@
                                 <polyline points="8 6 2 12 8 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h3>Разработка</h3>
-                        <p>Пишем чистый и масштабируемый код на Laravel, следуя лучшим практикам. Регулярно демонстрируем промежуточные результаты. Используем современный стек: Laravel для backend, React/Vue для frontend.</p>
+                        <h3 data-translate="process.development.title">Разработка</h3>
+                        <p data-translate="process.development.text">Пишем чистый и масштабируемый код на Laravel или используем CMS WordPress, следуя лучшим практикам. Регулярно демонстрируем промежуточные результаты. Используем современный стек: Laravel для backend, React/Vue для frontend, или WordPress для быстрой разработки.</p>
                     </div>
                 </div>
                 <div class="process-step">
@@ -648,23 +703,23 @@
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <svg width="24" height="24">
-                                    <use href="#icon-phone"></use>
+                                    <use href="#icon-email"></use>
                                 </svg>
                             </div>
                             <div>
-                                <h4>Poland</h4>
-                                <p><a href="tel:+48728535130">+48 728 535 130</a></p>
+                                <h4 data-translate="contact.email.title">Email</h4>
+                                <p><a href="mailto:sales@webco-solutions.online">sales@webco-solutions.online</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <svg width="24" height="24">
-                                    <use href="#icon-phone"></use>
+                                    <use href="#icon-telegram"></use>
                                 </svg>
                             </div>
                             <div>
-                                <h4>Ukraine</h4>
-                                <p><a href="tel:+380500324047">+380 500 324 047</a></p>
+                                <h4 data-translate="contact.telegram.title">Telegram</h4>
+                                <p><a href="https://t.me/WebCoSolutions" target="_blank" rel="noopener noreferrer">@WebCoSolutions</a></p>
                             </div>
                         </div>
                     </div>
@@ -679,6 +734,11 @@
                         <label for="phone">Телефон *</label>
                         <input type="tel" id="phone" name="phone" required placeholder="+48 123 456 789">
                         <span class="error-message" id="phoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-translate="contact.form.email">Ваш email *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com" data-translate-placeholder="contact.form.emailPlaceholder">
+                        <span class="error-message" id="emailError"></span>
                     </div>
                     <div class="form-group">
                         <label for="service">Интересующая услуга</label>
@@ -709,11 +769,17 @@
                         <span>Отправить заявку</span>
                         <span class="btn-loader"></span>
                     </button>
-                    <div class="form-message" id="formMessage"></div>
                 </form>
             </div>
         </div>
     </section>
+
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <div class="modal-message" id="modalMessage"></div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -721,7 +787,7 @@
             <div class="footer-nav-row">
                 <div class="footer-logo">
                     <div class="logo">
-                        <img src="logo.png" alt="WebCo Solutions" class="logo-icon">
+                        <span>WebCo Solutions</span>
                     </div>
                 </div>
                 <nav class="footer-nav">
@@ -735,20 +801,18 @@
             </div>
             <div class="footer-divider"></div>
             <div class="footer-bottom">
-                <div class="footer-phones">
-                    <div class="footer-phone">
+                <div class="footer-email">
+                    <div class="footer-email-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <use href="#icon-phone"></use>
+                            <use href="#icon-email"></use>
                         </svg>
-                        <span class="phone-label">Poland:</span>
-                        <a href="tel:+48728535130">+48 728 535 130</a>
+                        <a href="mailto:sales@webco-solutions.online">sales@webco-solutions.online</a>
                     </div>
-                    <div class="footer-phone">
+                    <div class="footer-email-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <use href="#icon-phone"></use>
+                            <use href="#icon-telegram"></use>
                         </svg>
-                        <span class="phone-label">Ukraine:</span>
-                        <a href="tel:+380500324047">+380 500 324 047</a>
+                        <a href="https://t.me/WebCoSolutions" target="_blank" rel="noopener noreferrer">@WebCoSolutions</a>
                     </div>
                 </div>
                 <p class="footer-copyright" data-translate="footer.copyrightFull"></p>
