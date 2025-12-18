@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>WebCo Solutions - Разработка веб-сайтов и онлайн решений</title>
+    <meta name="title" content="WebCo Solutions - Разработка веб-сайтов и онлайн решений">
+    <meta name="description" content="Профессиональная разработка веб-сайтов, веб-приложений и онлайн решений. Создаем современные цифровые продукты на Laravel, WordPress, React, Vue.js. Полный цикл разработки от дизайна до запуска.">
+    <meta name="keywords" content="веб-разработка, создание сайтов, разработка веб-приложений, Laravel разработка, WordPress, React, Vue.js, веб-дизайн, онлайн решения, CRM системы, лендинги, корпоративные сайты">
+    <meta name="author" content="WebCo Solutions">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Russian">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://webco-solutions.com/">
+    <meta property="og:title" content="WebCo Solutions - Разработка веб-сайтов и онлайн решений">
+    <meta property="og:description" content="Профессиональная разработка веб-сайтов, веб-приложений и онлайн решений. Создаем современные цифровые продукты на Laravel, WordPress, React, Vue.js.">
+    <meta property="og:image" content="https://webco-solutions.com/og-image.jpg">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="WebCo Solutions">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://webco-solutions.com/">
+    <meta property="twitter:title" content="WebCo Solutions - Разработка веб-сайтов и онлайн решений">
+    <meta property="twitter:description" content="Профессиональная разработка веб-сайтов, веб-приложений и онлайн решений. Создаем современные цифровые продукты на Laravel, WordPress, React, Vue.js.">
+    <meta property="twitter:image" content="https://webco-solutions.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://webco-solutions.com/">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "WebCo Solutions",
+        "url": "https://webco-solutions.com",
+        "logo": "https://webco-solutions.com/logo.png",
+        "description": "Профессиональная разработка веб-сайтов, веб-приложений и онлайн решений",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "PL"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+48-728-535-130",
+            "contactType": "customer service",
+            "availableLanguage": ["Russian", "Ukrainian", "Polish", "English"]
+        },
+        "sameAs": [],
+        "areaServed": ["PL", "UA", "RU", "EU"],
+        "knowsAbout": [
+            "Web Development",
+            "Web Design",
+            "Laravel",
+            "WordPress",
+            "React",
+            "Vue.js",
+            "CRM Systems",
+            "Online Solutions"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "WebCo Solutions",
+        "url": "https://webco-solutions.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://webco-solutions.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Web Development",
+        "provider": {
+            "@type": "Organization",
+            "name": "WebCo Solutions"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": ["Poland", "Ukraine", "Russia", "EU"]
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Development Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Корпоративные сайты",
+                        "description": "Сайты-визитки и презентационные порталы"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Лендинги с интеграциями",
+                        "description": "Одностраничные сайты с кастомной логикой"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "CRM системы",
+                        "description": "Автоматизация бизнес-процессов"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Веб-приложения",
+                        "description": "Уникальные веб-платформы"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Enterprise решения",
+                        "description": "Сложные кастомные системы"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- SVG Icons Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-logo" viewBox="0 0 200 40" fill="none">
+            <path d="M8 8c-2 0-4 1.5-4 4v16c0 2.5 2 4 4 4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 8c2 0 4 1.5 4 4v16c0 2.5-2 4-4 4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="30" y="26" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="currentColor">WebCo Solutions</text>
+            <path d="M192 8c2 0 4 1.5 4 4v16c0 2.5-2 4-4 4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M192 8c-2 0-4 1.5-4 4v16c0 2.5 2 4 4 4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-target" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-lightning" viewBox="0 0 24 24" fill="none">
+            <path d="M13 2L3 14h8l-2 8 10-12h-8l2-8z" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-handshake" viewBox="0 0 24 24" fill="none">
+            <path d="M20.5 14.5L16 10l-2 2-4-4-4.5 4.5L2 10v8h20v-3.5z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 10l-2-2-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 10l2-2 4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-rocket" viewBox="0 0 24 24" fill="none">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-email" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 24 24" fill="none">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24" fill="none">
+            <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+    </svg>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="logo.png" alt="WebCo Solutions" class="logo-icon">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#pricing">Расценки</a></li>
+                    <li><a href="#process">Процесс</a></li>
+                    <li><a href="#contact" class="btn-nav">Связаться</a></li>
+                    <li class="language-switcher-mobile">
+                        <div class="language-switcher">
+                            <button class="lang-btn" id="langBtn" aria-label="Language selector">
+                                <span class="lang-current">RU</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="lang-dropdown" id="langDropdown">
+                                <button class="lang-option" data-lang="ru">Русский</button>
+                                <button class="lang-option" data-lang="uk">Українська</button>
+                                <button class="lang-option" data-lang="pl">Polski</button>
+                                <button class="lang-option" data-lang="en">English</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="language-switcher language-switcher-desktop">
+                    <button class="lang-btn" id="langBtnDesktop" aria-label="Language selector">
+                        <span class="lang-current">RU</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdownDesktop">
+                        <button class="lang-option" data-lang="ru">Русский</button>
+                        <button class="lang-option" data-lang="uk">Українська</button>
+                        <button class="lang-option" data-lang="pl">Polski</button>
+                        <button class="lang-option" data-lang="en">English</button>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Создаём цифровые решения,
+                    <span class="gradient-text">которые работают</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Мы — команда профессионалов, превращающая ваши идеи в современные веб-приложения и дизайны, которые привлекают клиентов и увеличивают продажи.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Проектов</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Лет опыта</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Довольных клиентов</div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Начать проект</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">О нас</span>
+                <h2 class="section-title">Почему выбирают нас</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <svg width="48" height="48">
+                            <use href="#icon-target"></use>
+                        </svg>
+                    </div>
+                    <h3>Фокус на результат</h3>
+                    <p>Каждый проект мы создаём с учётом ваших бизнес-целей. Мы не просто делаем красивые сайты — мы создаём инструменты для роста вашего бизнеса.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <svg width="48" height="48">
+                            <use href="#icon-lightning"></use>
+                        </svg>
+                    </div>
+                    <h3>Современные технологии</h3>
+                    <p>Используем актуальный стек технологий и лучшие практики разработки. Ваш проект будет быстрым, безопасным и масштабируемым.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <svg width="48" height="48">
+                            <use href="#icon-handshake"></use>
+                        </svg>
+                    </div>
+                    <h3>Прозрачное сотрудничество</h3>
+                    <p>Вы всегда в курсе процесса разработки. Регулярные отчёты, открытая коммуникация и гибкий подход к изменениям.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <svg width="48" height="48">
+                            <use href="#icon-rocket"></use>
+                        </svg>
+                    </div>
+                    <h3>Быстрая разработка</h3>
+                    <p>Оптимизированные процессы позволяют нам создавать качественные решения в сжатые сроки без потери качества.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Услуги</span>
+                <h2 class="section-title">Что мы делаем</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>Веб-разработка</h3>
+                    <p>Современные веб-сайты и веб-приложения на Laravel, React, Vue.js. От лендингов до сложных корпоративных систем с мощным backend на Laravel.</p>
+                    <ul class="service-features">
+                        <li>Laravel Backend разработка</li>
+                        <li>Frontend на React/Vue.js</li>
+                        <li>Full-stack решения</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>UI/UX Дизайн</h3>
+                    <p>Создаём интуитивные и красивые интерфейсы, которые нравятся пользователям и конвертируют посетителей в клиентов.</p>
+                    <ul class="service-features">
+                        <li>Дизайн интерфейсов</li>
+                        <li>Прототипирование</li>
+                        <li>Дизайн-системы</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>Мобильные приложения</h3>
+                    <p>Разработка нативных и кроссплатформенных мобильных приложений для iOS и Android.</p>
+                    <ul class="service-features">
+                        <li>iOS разработка</li>
+                        <li>Android разработка</li>
+                        <li>React Native</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3>Поддержка и развитие</h3>
+                    <p>Не бросаем проекты после запуска. Обеспечиваем техническую поддержку, обновления и развитие вашего продукта.</p>
+                    <ul class="service-features">
+                        <li>Техническая поддержка</li>
+                        <li>Обновления и улучшения</li>
+                        <li>Мониторинг и аналитика</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Расценки</span>
+                <h2 class="section-title">Стоимость разработки</h2>
+                <p class="section-description">
+                    Прозрачные цены на разработку. Каждый проект оценивается индивидуально, ниже указаны ориентировочные диапазоны.
+                </p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Корпоративные сайты</h3>
+                        <p class="pricing-subtitle">Сайты-визитки и презентационные порталы</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount" data-price="corporate">от $500</span>
+                        <span class="price-period" data-translate="pricing.period">за проект</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Адаптивный дизайн</li>
+                        <li>До 10 страниц</li>
+                        <li>CMS на Laravel</li>
+                        <li>Форма обратной связи</li>
+                        <li>SEO оптимизация</li>
+                        <li>Хостинг на 3 месяца</li>
+                    </ul>
+                    <div class="pricing-tech">
+                        <span class="tech-label">Технологии:</span>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline btn-block">Заказать</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Популярно</div>
+                    <div class="pricing-header">
+                        <h3>Лендинги с интеграциями</h3>
+                        <p class="pricing-subtitle">Одностраничные сайты с кастомной логикой</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount" data-price="landing">от $800</span>
+                        <span class="price-period" data-translate="pricing.period">за проект</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Уникальный дизайн</li>
+                        <li>Интеграция с CRM/API</li>
+                        <li>Кастомные формы</li>
+                        <li>Аналитика и метрики</li>
+                        <li>Backend на Laravel</li>
+                        <li>Админ-панель</li>
+                    </ul>
+                    <div class="pricing-tech">
+                        <span class="tech-label">Технологии:</span>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary btn-block">Заказать</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>CRM и системы управления</h3>
+                        <p class="pricing-subtitle">Автоматизация бизнес-процессов</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount" data-price="crm">от $2,700</span>
+                        <span class="price-period" data-translate="pricing.period">за проект</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Кастомная CRM система</li>
+                        <li>Управление клиентами</li>
+                        <li>Отчеты и аналитика</li>
+                        <li>Интеграции с сервисами</li>
+                        <li>Laravel Backend API</li>
+                        <li>Роли и права доступа</li>
+                    </ul>
+                    <div class="pricing-tech">
+                        <span class="tech-label">Технологии:</span>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Laravel Sanctum</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline btn-block">Заказать</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Веб-приложения</h3>
+                        <p class="pricing-subtitle">Уникальные веб-платформы</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount" data-price="webapp">от $4,300</span>
+                        <span class="price-period" data-translate="pricing.period">за проект</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Сложная бизнес-логика</li>
+                        <li>Многофункциональность</li>
+                        <li>Масштабируемая архитектура</li>
+                        <li>REST API на Laravel</li>
+                        <li>Real-time функции</li>
+                        <li>Мобильная версия</li>
+                    </ul>
+                    <div class="pricing-tech">
+                        <span class="tech-label">Технологии:</span>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Laravel Echo</span>
+                            <span class="tech-tag">React/Next.js</span>
+                            <span class="tech-tag">WebSocket</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline btn-block">Заказать</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise решения</h3>
+                        <p class="pricing-subtitle">Сложные кастомные системы</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount" data-price="enterprise">от $8,600</span>
+                        <span class="price-period" data-translate="pricing.period">за проект</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Микросервисная архитектура</li>
+                        <li>Высокая нагрузка</li>
+                        <li>Интеграция с внешними системами</li>
+                        <li>Laravel + дополнительные сервисы</li>
+                        <li>Кластерная инфраструктура</li>
+                        <li>Техническая поддержка 24/7</li>
+                    </ul>
+                    <div class="pricing-tech">
+                        <span class="tech-label">Технологии:</span>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Laravel Horizon</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Microservices</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline btn-block">Заказать</a>
+                </div>
+            </div>
+            <div class="pricing-note">
+                <p>Все цены указаны ориентировочно. Точная стоимость рассчитывается после обсуждения требований к проекту.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Процесс</span>
+                <h2 class="section-title">Как мы реализуем наши проекты</h2>
+                <p class="section-description">
+                    Прозрачный и структурированный подход к разработке, который гарантирует качественный результат
+                </p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 10h.01M12 10h.01M16 10h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Анализ и планирование</h3>
+                        <p>Изучаем ваш бизнес, цели и требования. Проводим исследование целевой аудитории и конкурентов. Формируем техническое задание и план разработки.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M9 9h6M9 15h6M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Дизайн и прототипирование</h3>
+                        <p>Создаём wireframes и прототипы интерфейса. Разрабатываем визуальный дизайн с учётом UX-принципов. Согласовываем каждый этап с вами перед началом разработки.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <polyline points="16 18 22 12 16 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polyline points="8 6 2 12 8 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Разработка</h3>
+                        <p>Пишем чистый и масштабируемый код на Laravel, следуя лучшим практикам. Регулярно демонстрируем промежуточные результаты. Используем современный стек: Laravel для backend, React/Vue для frontend.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Тестирование</h3>
+                        <p>Проводим комплексное тестирование функциональности, производительности и безопасности. Устраняем все найденные ошибки. Обеспечиваем совместимость с разными устройствами.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Запуск и поддержка</h3>
+                        <p>Деплоим проект на сервер и настраиваем инфраструктуру. Обучаем вашу команду работе с системой. Обеспечиваем техническую поддержку и дальнейшее развитие продукта.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="section-header">
+                        <span class="section-tag">Связь</span>
+                        <h2 class="section-title">Давайте обсудим ваш проект</h2>
+                        <p class="section-description">
+                            Заполните форму, и мы свяжемся с вами в течение 24 часов для обсуждения деталей вашего проекта.
+                        </p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24">
+                                    <use href="#icon-phone"></use>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Poland</h4>
+                                <p><a href="tel:+48728535130">+48 728 535 130</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24">
+                                    <use href="#icon-phone"></use>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Ukraine</h4>
+                                <p><a href="tel:+380500324047">+380 500 324 047</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Имя *</label>
+                        <input type="text" id="name" name="name" required placeholder="Ваше имя">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+48 123 456 789">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Интересующая услуга</label>
+                        <select id="service" name="service">
+                            <option value="">Выберите услугу</option>
+                            <option value="web">Веб-разработка</option>
+                            <option value="design">UI/UX Дизайн</option>
+                            <option value="mobile">Мобильные приложения</option>
+                            <option value="support">Поддержка и развитие</option>
+                            <option value="other">Другое</option>
+                        </select>
+                        <span class="error-message" id="serviceError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение *</label>
+                        <textarea id="message" name="message" required rows="5" placeholder="Расскажите о вашем проекте..."></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text" data-translate="contact.form.privacy"></span>
+                        </label>
+                        <span class="error-message" id="privacyError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span>Отправить заявку</span>
+                        <span class="btn-loader"></span>
+                    </button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-nav-row">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="logo.png" alt="WebCo Solutions" class="logo-icon">
+                    </div>
+                </div>
+                <nav class="footer-nav">
+                    <a href="#home">Главная</a>
+                    <a href="#about">О нас</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#pricing">Расценки</a>
+                    <a href="#process">Процесс</a>
+                    <a href="#contact">Контакты</a>
+                </nav>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <div class="footer-phones">
+                    <div class="footer-phone">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <use href="#icon-phone"></use>
+                        </svg>
+                        <span class="phone-label">Poland:</span>
+                        <a href="tel:+48728535130">+48 728 535 130</a>
+                    </div>
+                    <div class="footer-phone">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <use href="#icon-phone"></use>
+                        </svg>
+                        <span class="phone-label">Ukraine:</span>
+                        <a href="tel:+380500324047">+380 500 324 047</a>
+                    </div>
+                </div>
+                <p class="footer-copyright" data-translate="footer.copyrightFull"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="config.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
