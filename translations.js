@@ -120,7 +120,7 @@ const translations = {
                 },
                 development: {
                     title: "Разработка",
-                    text: "Пишем чистый и масштабируемый код на Laravel, следуя лучшим практикам. Регулярно демонстрируем промежуточные результаты. Используем современный стек: Laravel для backend, React/Vue для frontend."
+                    text: "Пишем чистый и масштабируемый код на Laravel или используем CMS WordPress, следуя лучшим практикам. Регулярно демонстрируем промежуточные результаты. Используем современный стек: Laravel для backend, React/Vue для frontend, или WordPress для быстрой разработки."
                 },
                 testing: {
                     title: "Тестирование",
@@ -136,10 +136,18 @@ const translations = {
             tag: "Связь",
             title: "Давайте обсудим ваш проект",
             subtitle: "Заполните форму, и мы свяжемся с вами в течение 24 часов для обсуждения деталей вашего проекта.",
+            email: {
+                title: "Email"
+            },
+            telegram: {
+                title: "Telegram"
+            },
             phone: "Телефон",
             form: {
                 name: "Имя",
                 phone: "Телефон",
+                email: "Ваш email",
+                emailPlaceholder: "your@email.com",
                 service: "Интересующая услуга",
                 servicePlaceholder: "Выберите услугу",
                 services: {
@@ -161,6 +169,8 @@ const translations = {
                     nameMaxLength: "Имя не должно превышать 50 символов",
                     phoneRequired: "Пожалуйста, введите номер телефона",
                     phoneInvalid: "Введите корректный номер телефона",
+                    emailRequired: "Пожалуйста, введите ваш email",
+                    emailInvalid: "Введите корректный email адрес",
                     messageRequired: "Пожалуйста, введите сообщение",
                     messageMinLength: "Сообщение должно содержать минимум 10 символов",
                     messageMaxLength: "Сообщение не должно превышать 1000 символов",
@@ -296,7 +306,7 @@ const translations = {
                 },
                 development: {
                     title: "Розробка",
-                    text: "Пишемо чистий та масштабований код на Laravel, дотримуючись найкращих практик. Регулярно демонструємо проміжні результати. Використовуємо сучасний стек: Laravel для backend, React/Vue для frontend."
+                    text: "Пишемо чистий та масштабований код на Laravel або використовуємо CMS WordPress, дотримуючись найкращих практик. Регулярно демонструємо проміжні результати. Використовуємо сучасний стек: Laravel для backend, React/Vue для frontend, або WordPress для швидкої розробки."
                 },
                 testing: {
                     title: "Тестування",
@@ -312,10 +322,18 @@ const translations = {
             tag: "Зв'язок",
             title: "Давайте обговоримо ваш проект",
             subtitle: "Заповніть форму, і ми зв'яжемося з вами протягом 24 годин для обговорення деталей вашого проекту.",
+            email: {
+                title: "Email"
+            },
+            telegram: {
+                title: "Telegram"
+            },
             phone: "Телефон",
             form: {
                 name: "Ім'я",
                 phone: "Телефон",
+                email: "Ваш email",
+                emailPlaceholder: "your@email.com",
                 service: "Цікавляча послуга",
                 servicePlaceholder: "Виберіть послугу",
                 services: {
@@ -337,6 +355,8 @@ const translations = {
                     nameMaxLength: "Ім'я не повинно перевищувати 50 символів",
                     phoneRequired: "Будь ласка, введіть номер телефону",
                     phoneInvalid: "Введіть коректний номер телефону",
+                    emailRequired: "Будь ласка, введіть ваш email",
+                    emailInvalid: "Введіть коректний email адрес",
                     messageRequired: "Будь ласка, введіть повідомлення",
                     messageMinLength: "Повідомлення повинно містити мінімум 10 символів",
                     messageMaxLength: "Повідомлення не повинно перевищувати 1000 символів",
@@ -472,7 +492,7 @@ const translations = {
                 },
                 development: {
                     title: "Rozwój",
-                    text: "Piszemy czysty i skalowalny kod na Laravel, przestrzegając najlepszych praktyk. Regularnie demonstrujemy pośrednie wyniki. Używamy nowoczesnego stosu: Laravel dla backendu, React/Vue dla frontendu."
+                    text: "Piszemy czysty i skalowalny kod na Laravel lub używamy CMS WordPress, przestrzegając najlepszych praktyk. Regularnie demonstrujemy pośrednie wyniki. Używamy nowoczesnego stosu: Laravel dla backendu, React/Vue dla frontendu, lub WordPress dla szybkiego rozwoju."
                 },
                 testing: {
                     title: "Testowanie",
@@ -488,10 +508,15 @@ const translations = {
             tag: "Kontakt",
             title: "Porozmawiajmy o Twoim projekcie",
             subtitle: "Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 24 godzin, aby omówić szczegóły Twojego projektu.",
+            email: {
+                title: "Email"
+            },
             phone: "Telefon",
             form: {
                 name: "Imię",
                 phone: "Telefon",
+                email: "Twój email",
+                emailPlaceholder: "your@email.com",
                 service: "Interesująca usługa",
                 servicePlaceholder: "Wybierz usługę",
                 services: {
@@ -513,6 +538,8 @@ const translations = {
                     nameMaxLength: "Imię nie może przekraczać 50 znaków",
                     phoneRequired: "Proszę podać numer telefonu",
                     phoneInvalid: "Wprowadź poprawny numer telefonu",
+                    emailRequired: "Proszę podać adres email",
+                    emailInvalid: "Wprowadź poprawny adres email",
                     messageRequired: "Proszę wprowadzić wiadomość",
                     messageMinLength: "Wiadomość musi zawierać co najmniej 10 znaków",
                     messageMaxLength: "Wiadomość nie może przekraczać 1000 znaków",
@@ -648,7 +675,7 @@ const translations = {
                 },
                 development: {
                     title: "Development",
-                    text: "We write clean and scalable code on Laravel, following best practices. Regularly demonstrate intermediate results. Use modern stack: Laravel for backend, React/Vue for frontend."
+                    text: "We write clean and scalable code on Laravel or use CMS WordPress, following best practices. Regularly demonstrate intermediate results. Use modern stack: Laravel for backend, React/Vue for frontend, or WordPress for rapid development."
                 },
                 testing: {
                     title: "Testing",
@@ -664,10 +691,15 @@ const translations = {
             tag: "Contact",
             title: "Let's Discuss Your Project",
             subtitle: "Fill out the form, and we'll contact you within 24 hours to discuss your project details.",
+            email: {
+                title: "Email"
+            },
             phone: "Phone",
             form: {
                 name: "Name",
                 phone: "Phone",
+                email: "Your email",
+                emailPlaceholder: "your@email.com",
                 service: "Service of Interest",
                 servicePlaceholder: "Select service",
                 services: {
@@ -688,6 +720,8 @@ const translations = {
                     nameMaxLength: "Name must not exceed 50 characters",
                     phoneRequired: "Please enter your phone number",
                     phoneInvalid: "Please enter a valid phone number",
+                    emailRequired: "Please enter your email",
+                    emailInvalid: "Please enter a valid email address",
                     messageRequired: "Please enter a message",
                     messageMinLength: "Message must be at least 10 characters",
                     messageMaxLength: "Message must not exceed 1000 characters"

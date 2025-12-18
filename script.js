@@ -3,8 +3,92 @@ if (typeof emailjs !== 'undefined' && typeof EMAILJS_CONFIG !== 'undefined' && E
     emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
 }
 
+// Theme Switcher
+function getCurrentHour() {
+    return new Date().getHours();
+}
+
+function shouldUseDarkTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        return savedTheme === 'dark';
+    }
+    // Auto switch to dark after 19:00 (7 PM)
+    return getCurrentHour() >= 19;
+}
+
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+}
+
+function initTheme() {
+    const theme = shouldUseDarkTheme() ? 'dark' : 'light';
+    setTheme(theme);
+}
+
+// Initialize theme on page load
+initTheme();
+
+// Theme toggle buttons
+function setupThemeToggle(buttonId) {
+    const themeToggle = document.getElementById(buttonId);
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    }
+}
+
+setupThemeToggle('themeToggle');
+setupThemeToggle('themeToggleMobile');
+
+// Check time every minute and auto-switch if needed (only if user hasn't manually set theme)
+setInterval(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (!savedTheme) {
+        const theme = shouldUseDarkTheme() ? 'dark' : 'light';
+        setTheme(theme);
+    }
+}, 60000); // Check every minute
+
 // Language Switcher
-let currentLang = localStorage.getItem('language') || 'en';
+function detectBrowserLanguage() {
+    const supportedLangs = ['ru', 'uk', 'pl', 'en'];
+    const browserLang = navigator.language || navigator.userLanguage || 'en';
+    const langCode = browserLang.split('-')[0].toLowerCase();
+    
+    if (supportedLangs.includes(langCode)) {
+        return langCode;
+    }
+    
+    // Try to match from navigator.languages array
+    if (navigator.languages) {
+        for (let lang of navigator.languages) {
+            const code = lang.split('-')[0].toLowerCase();
+            if (supportedLangs.includes(code)) {
+                return code;
+            }
+        }
+    }
+    
+    return 'en';
+}
+
+function getInitialLanguage() {
+    const savedLang = localStorage.getItem('language');
+    if (savedLang) {
+        return savedLang;
+    }
+    return detectBrowserLanguage();
+}
+
+let currentLang = getInitialLanguage();
+if (!localStorage.getItem('language')) {
+    localStorage.setItem('language', currentLang);
+}
 const langBtn = document.getElementById('langBtn');
 const langBtnDesktop = document.getElementById('langBtnDesktop');
 const langDropdown = document.getElementById('langDropdown');
@@ -94,13 +178,20 @@ function translatePage(lang) {
             keys.forEach(key => value = value?.[key]);
             if (value) {
                 if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'OPTION') {
-                    el.textContent = value;
+                    if (dataAttr === 'data-translate-placeholder') {
+                        el.placeholder = value;
+                    } else {
+                        el.textContent = value;
+                    }
                 } else {
                     el.textContent = value;
                 }
             }
         });
     }
+    
+    // Update placeholders
+    updateByData('data-translate-placeholder', '');
     
     // Navigation
     const navLinks = document.querySelectorAll('.nav-menu a');
@@ -294,27 +385,10 @@ function translatePage(lang) {
     
     // Contact details
     const contactItems = document.querySelectorAll('.contact-item');
-    if (contactItems.length >= 2) {
-        // Poland phone
-        if (lang === 'pl') {
-            contactItems[0].querySelector('h4').textContent = 'Polska';
-        } else if (lang === 'uk') {
-            contactItems[0].querySelector('h4').textContent = 'Польща';
-        } else if (lang === 'en') {
-            contactItems[0].querySelector('h4').textContent = 'Poland';
-        } else {
-            contactItems[0].querySelector('h4').textContent = 'Польша';
-        }
-        
-        // Ukraine phone
-        if (lang === 'uk') {
-            contactItems[1].querySelector('h4').textContent = 'Україна';
-        } else if (lang === 'pl') {
-            contactItems[1].querySelector('h4').textContent = 'Ukraina';
-        } else if (lang === 'en') {
-            contactItems[1].querySelector('h4').textContent = 'Ukraine';
-        } else {
-            contactItems[1].querySelector('h4').textContent = 'Украина';
+    if (contactItems.length >= 1) {
+        const contactTitle = contactItems[0].querySelector('h4[data-translate="contact.email.title"]');
+        if (contactTitle && t.contact && t.contact.email && t.contact.email.title) {
+            contactTitle.textContent = t.contact.email.title;
         }
     }
     
@@ -330,31 +404,16 @@ function translatePage(lang) {
         footerNavLinks[5].textContent = t.nav.contact;
     }
     
-    // Footer phones
-    const footerPhones = document.querySelectorAll('.footer-phone .phone-label');
-    if (footerPhones.length >= 2) {
-        if (lang === 'pl') {
-            footerPhones[0].textContent = 'Polska:';
-            footerPhones[1].textContent = 'Ukraina:';
-        } else if (lang === 'uk') {
-            footerPhones[0].textContent = 'Польща:';
-            footerPhones[1].textContent = 'Україна:';
-        } else if (lang === 'en') {
-            footerPhones[0].textContent = 'Poland:';
-            footerPhones[1].textContent = 'Ukraine:';
-        } else {
-            footerPhones[0].textContent = 'Польша:';
-            footerPhones[1].textContent = 'Украина:';
-        }
-    }
     
     // Contact form
     const formLabels = document.querySelectorAll('.form-group label');
-    if (formLabels.length >= 4) {
+    if (formLabels.length >= 5) {
         formLabels[0].textContent = t.contact.form.name + ' *';
         formLabels[1].textContent = t.contact.form.phone + ' *';
-        formLabels[2].textContent = t.contact.form.service;
-        formLabels[3].textContent = t.contact.form.message + ' *';
+        const emailLabel = document.querySelector('label[for="email"]');
+        if (emailLabel) emailLabel.textContent = t.contact.form.email + ' *';
+        formLabels[3].textContent = t.contact.form.service;
+        formLabels[4].textContent = t.contact.form.message + ' *';
     }
     
     const nameInput = document.getElementById('name');
@@ -367,6 +426,8 @@ function translatePage(lang) {
             phoneInput.placeholder = t.contact.form.phone;
         }
     }
+    const emailInput = document.getElementById('email');
+    if (emailInput) emailInput.placeholder = t.contact.form.emailPlaceholder || 'your@email.com';
     const messageInput = document.getElementById('message');
     if (messageInput) messageInput.placeholder = t.contact.form.messagePlaceholder;
     
@@ -526,6 +587,11 @@ function validatePhone(phone) {
     return phoneRegex.test(cleaned) && cleaned.length >= 7;
 }
 
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
 function showError(fieldId, message) {
     const field = document.getElementById(fieldId);
     const errorElement = document.getElementById(fieldId + 'Error');
@@ -555,6 +621,7 @@ function validateForm() {
     
     const name = document.getElementById('name').value.trim();
     const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
     const privacy = document.getElementById('privacy');
     
@@ -578,6 +645,16 @@ function validateForm() {
         isValid = false;
     } else if (!validatePhone(phone)) {
         showError('phone', validation.phoneInvalid);
+        isValid = false;
+    }
+    
+    // Validate email
+    clearError('email');
+    if (!email) {
+        showError('email', validation.emailRequired);
+        isValid = false;
+    } else if (!validateEmail(email)) {
+        showError('email', validation.emailInvalid);
         isValid = false;
     }
     
@@ -606,12 +683,16 @@ function validateForm() {
 
 // Form handling
 const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
+// Modal elements
+const modalOverlay = document.getElementById('modalOverlay');
+const modalMessage = document.getElementById('modalMessage');
+let scrollPosition = 0;
 
 if (contactForm) {
     // Real-time validation
     const nameInput = document.getElementById('name');
     const phoneInput = document.getElementById('phone');
+    const emailInput = document.getElementById('email');
     const messageInput = document.getElementById('message');
     const privacyInput = document.getElementById('privacy');
     
@@ -657,6 +738,26 @@ if (contactForm) {
         });
     }
     
+    if (emailInput) {
+        emailInput.addEventListener('blur', () => {
+            const t = translations[currentLang] || translations.ru;
+            const validation = t.contact.form.validation;
+            const email = emailInput.value.trim();
+            
+            clearError('email');
+            if (email && !validateEmail(email)) {
+                showError('email', validation.emailInvalid);
+            }
+        });
+        
+        emailInput.addEventListener('input', () => {
+            const email = emailInput.value.trim();
+            if (email && validateEmail(email)) {
+                clearError('email');
+            }
+        });
+    }
+    
     if (messageInput) {
         messageInput.addEventListener('blur', () => {
             const t = translations[currentLang] || translations.ru;
@@ -693,6 +794,7 @@ if (contactForm) {
         // Clear all errors
         clearError('name');
         clearError('phone');
+        clearError('email');
         clearError('message');
         clearError('privacy');
         
@@ -707,41 +809,65 @@ if (contactForm) {
         // Show loading state
         submitButton.classList.add('loading');
         submitButton.disabled = true;
-        formMessage.style.display = 'none';
         
-        // Send email to salalaiko1557@gmail.com
+        // Send email to sales@webco-solutions.online
         try {
             await sendEmail(formData);
-            
-            // Show success message
-            const t = translations[currentLang] || translations.ru;
-            formMessage.textContent = t.contact.form.success;
-            formMessage.className = 'form-message success';
-            formMessage.style.display = 'block';
             
             // Reset form and clear errors
             contactForm.reset();
             clearError('name');
             clearError('phone');
+            clearError('email');
             clearError('message');
             clearError('privacy');
             
-            // Scroll to message
-            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // Show success message in modal
+            const t = translations[currentLang] || translations.ru;
             
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
+            if (modalMessage && modalOverlay) {
+                // Save scroll position and lock scroll
+                scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+                document.body.style.top = `-${scrollPosition}px`;
+                modalMessage.textContent = t.contact.form.success;
+                modalMessage.className = 'modal-message success';
+                modalOverlay.classList.add('show');
+                document.body.classList.add('modal-open');
+                
+                // Hide modal after 3 seconds
+                setTimeout(() => {
+                    if (modalOverlay) {
+                        modalOverlay.classList.remove('show');
+                        document.body.classList.remove('modal-open');
+                        document.body.style.top = '';
+                        window.scrollTo(0, scrollPosition);
+                    }
+                }, 3000);
+            }
             
         } catch (error) {
-            // Show error message
+            // Show error message in modal
             const t = translations[currentLang] || translations.ru;
-            formMessage.textContent = t.contact.form.error;
-            formMessage.className = 'form-message error';
-            formMessage.style.display = 'block';
             
-            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            if (modalMessage && modalOverlay) {
+                // Save scroll position and lock scroll
+                scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+                document.body.style.top = `-${scrollPosition}px`;
+                modalMessage.textContent = t.contact.form.error;
+                modalMessage.className = 'modal-message error';
+                modalOverlay.classList.add('show');
+                document.body.classList.add('modal-open');
+                
+                // Hide modal after 3 seconds
+                setTimeout(() => {
+                    if (modalOverlay) {
+                        modalOverlay.classList.remove('show');
+                        document.body.classList.remove('modal-open');
+                        document.body.style.top = '';
+                        window.scrollTo(0, scrollPosition);
+                    }
+                }, 3000);
+            }
         } finally {
             // Remove loading state
             submitButton.classList.remove('loading');
@@ -781,12 +907,13 @@ async function sendEmail(formData) {
             EMAILJS_CONFIG.SERVICE_ID,
             EMAILJS_CONFIG.TEMPLATE_ID,
             {
-                to_email: 'salalaiko1557@gmail.com',
+                to_email: 'sales@webco-solutions.online',
                 from_name: formData.get('name'),
                 phone: formData.get('phone'),
+                email: formData.get('email'),
                 service: formData.get('service') || 'Not specified',
                 message: formData.get('message'),
-                reply_to: formData.get('phone'),
+                reply_to: formData.get('email'),
                 domain: currentDomain,
                 timestamp: new Date().toISOString()
             }
@@ -851,24 +978,10 @@ if (phoneInput) {
     });
 }
 
-// Parallax effects for multiple sections
+// Parallax effects for multiple sections (hero section disabled for performance)
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const windowHeight = window.innerHeight;
-    
-    // Hero section parallax
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const heroContent = hero.querySelector('.hero-content');
-        const heroBackground = hero.querySelector('.hero-background');
-        if (heroContent && scrolled < windowHeight) {
-            heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-            heroContent.style.opacity = 1 - (scrolled / windowHeight) * 0.5;
-        }
-        if (heroBackground && scrolled < windowHeight) {
-            heroBackground.style.transform = `translateY(${scrolled * 0.3}px)`;
-        }
-    }
     
     // About section parallax
     const about = document.querySelector('.about');
@@ -1011,6 +1124,18 @@ if (processSection && processSteps.length > 0) {
     // Initialize steps as hidden
     processSteps.forEach(step => {
         step.classList.remove('visible');
+    });
+}
+
+// Close modal on overlay click
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('show');
+            document.body.classList.remove('modal-open');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        }
     });
 }
 
