@@ -102,10 +102,29 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    gap: 12px;
     font-size: 20px;
     font-weight: 700;
     color: var(--text-primary);
     text-decoration: none;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.logo-dark {
+    display: none;
+}
+
+[data-theme="dark"] .logo-light {
+    display: none;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: block;
 }
 
 .logo span {
