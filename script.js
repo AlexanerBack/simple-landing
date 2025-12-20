@@ -193,6 +193,9 @@ function translatePage(lang) {
     // Update placeholders
     updateByData('data-translate-placeholder', '');
     
+    // Update all elements with data-translate attribute
+    updateByData('data-translate', '');
+    
     // Navigation
     const navLinks = document.querySelectorAll('.nav-menu a');
     if (navLinks.length >= 6) {
@@ -287,7 +290,7 @@ function translatePage(lang) {
     if (pricingSubtitle) pricingSubtitle.textContent = t.pricing.subtitle;
     
     const priceAmounts = document.querySelectorAll('.price-amount');
-    const pricePrefix = lang === 'en' ? 'from' : lang === 'pl' ? 'od' : 'от';
+    const pricePrefix = lang === 'en' ? 'from' : lang === 'pl' ? 'od' : lang === 'uk' ? 'від' : 'от';
     priceAmounts.forEach((el) => {
         const priceKey = el.dataset.price;
         if (priceKey && prices[priceKey]) {

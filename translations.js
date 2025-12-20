@@ -77,15 +77,20 @@ const translations = {
             popular: "Популярно",
             period: "за проект",
             cards: {
+                simple: {
+                    title: "Простые лендинги и сайты визитки",
+                    subtitle: "Простые одностраничные сайты",
+                    features: ["Адаптивный дизайн", "1 страница", "Форма обратной связи", "SEO оптимизация"]
+                },
                 corporate: {
                     title: "Корпоративные сайты",
                     subtitle: "Сайты-визитки и презентационные порталы",
-                    features: ["Адаптивный дизайн", "До 10 страниц", "CMS на Laravel", "Форма обратной связи", "SEO оптимизация", "Хостинг на 3 месяца"]
+                    features: ["Адаптивный дизайн", "1 страница", "Форма обратной связи", "SEO оптимизация", "Хостинг на 3 месяца"]
                 },
                 landing: {
                     title: "Лендинги с интеграциями",
-                    subtitle: "Одностраничные сайты с кастомной логикой",
-                    features: ["Уникальный дизайн", "Интеграция с CRM/API", "Кастомные формы", "Аналитика и метрики", "Backend на Laravel", "Админ-панель"]
+                    subtitle: "Сайты с кастомной логикой",
+                    features: ["Уникальный дизайн", "Интеграция с CRM/API", "Кастомные формы", "Аналитика и метрики", "Backend на WordPress", "Админ-панель"]
                 },
                 crm: {
                     title: "CRM и системы управления",
@@ -141,6 +146,9 @@ const translations = {
             },
             telegram: {
                 title: "Telegram"
+            },
+            instagram: {
+                title: "Instagram"
             },
             phone: "Телефон",
             form: {
@@ -263,15 +271,20 @@ const translations = {
             popular: "Популярно",
             period: "за проект",
             cards: {
+                simple: {
+                    title: "Прості лендинги та сайти візитки",
+                    subtitle: "Прості односторінкові сайти",
+                    features: ["Адаптивний дизайн", "1 сторінка", "Форма зворотного зв'язку", "SEO оптимізація"]
+                },
                 corporate: {
                     title: "Корпоративні сайти",
                     subtitle: "Сайти-візитки та презентаційні портали",
-                    features: ["Адаптивний дизайн", "До 10 сторінок", "CMS на Laravel", "Форма зворотного зв'язку", "SEO оптимізація", "Хостинг на 3 місяці"]
+                    features: ["Адаптивний дизайн", "1 сторінка", "Форма зворотного зв'язку", "SEO оптимізація", "Хостинг на 3 місяці"]
                 },
                 landing: {
                     title: "Лендинги з інтеграціями",
-                    subtitle: "Односторінкові сайти з кастомною логікою",
-                    features: ["Унікальний дизайн", "Інтеграція з CRM/API", "Кастомні форми", "Аналітика та метрики", "Backend на Laravel", "Адмін-панель"]
+                    subtitle: "Сайти з кастомною логікою",
+                    features: ["Унікальний дизайн", "Інтеграція з CRM/API", "Кастомні форми", "Аналітика та метрики", "Backend WordPress", "Адмін-панель"]
                 },
                 crm: {
                     title: "CRM та системи управління",
@@ -327,6 +340,9 @@ const translations = {
             },
             telegram: {
                 title: "Telegram"
+            },
+            instagram: {
+                title: "Instagram"
             },
             phone: "Телефон",
             form: {
@@ -449,15 +465,20 @@ const translations = {
             popular: "Popularne",
             period: "za projekt",
             cards: {
+                simple: {
+                    title: "Proste landing page'y i strony wizytówki",
+                    subtitle: "Proste jednostronicowe strony",
+                    features: ["Responsywny design", "1 strona", "Formularz kontaktowy", "Optymalizacja SEO"]
+                },
                 corporate: {
                     title: "Strony korporacyjne",
                     subtitle: "Wizytówki i portale prezentacyjne",
-                    features: ["Responsywny design", "Do 10 stron", "CMS na Laravel", "Formularz kontaktowy", "Optymalizacja SEO", "Hosting na 3 miesiące"]
+                    features: ["Responsywny design", "1 strona", "Formularz kontaktowy", "Optymalizacja SEO", "Hosting na 3 miesiące"]
                 },
                 landing: {
                     title: "Landing page'y z integracjami",
-                    subtitle: "Jednostronicowe strony z niestandardową logiką",
-                    features: ["Unikalny design", "Integracja z CRM/API", "Niestandardowe formularze", "Analityka i metryki", "Backend na Laravel", "Panel administracyjny"]
+                    subtitle: "Strony z niestandardową logiką",
+                    features: ["Unikalny design", "Integracja z CRM/API", "Niestandardowe formularze", "Analityka i metryki", "Backend WordPress", "Panel administracyjny"]
                 },
                 crm: {
                     title: "CRM i systemy zarządzania",
@@ -632,15 +653,20 @@ const translations = {
             popular: "Popular",
             period: "per project",
             cards: {
+                simple: {
+                    title: "Simple Landing Pages and Business Card Sites",
+                    subtitle: "Simple single-page sites",
+                    features: ["Responsive Design", "1 page", "Contact Form", "SEO Optimization"]
+                },
                 corporate: {
                     title: "Corporate Websites",
                     subtitle: "Business card sites and presentation portals",
-                    features: ["Responsive Design", "Up to 10 pages", "Laravel CMS", "Contact Form", "SEO Optimization", "3 months hosting"]
+                    features: ["Responsive Design", "1 page", "Contact Form", "SEO Optimization", "3 months hosting"]
                 },
                 landing: {
                     title: "Landing Pages with Integrations",
-                    subtitle: "Single-page sites with custom logic",
-                    features: ["Unique Design", "CRM/API Integration", "Custom Forms", "Analytics & Metrics", "Laravel Backend", "Admin Panel"]
+                    subtitle: "Sites with custom logic",
+                    features: ["Unique Design", "CRM/API Integration", "Custom Forms", "Analytics & Metrics", "WordPress Backend", "Admin Panel"]
                 },
                 crm: {
                     title: "CRM & Management Systems",
@@ -740,6 +766,7 @@ const translations = {
 
 // Price in USD
 const prices = {
+    simple: 100,
     corporate: 500,
     landing: 800,
     crm: 2700,
