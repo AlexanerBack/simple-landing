@@ -740,19 +740,19 @@ const translations = {
                 submit: "Send Request",
                 success: "Thank you! Your request has been sent. We'll contact you within 24 hours.",
                 error: "An error occurred while sending the form. Please try again or contact us directly.",
-                privacy: "Я согласен(а) на обработку персональных данных",
+                privacy: "I agree to the processing of personal data",
                 validation: {
-                    nameRequired: "Пожалуйста, введите ваше имя",
-                    nameMinLength: "Имя должно содержать минимум 2 символа",
-                    nameMaxLength: "Имя не должно превышать 50 символов",
-                    phoneRequired: "Пожалуйста, введите номер телефона",
-                    phoneInvalid: "Введите корректный номер телефона",
-                    emailRequired: "Пожалуйста, введите ваш email",
-                    emailInvalid: "Введите корректный email адрес",
-                    messageRequired: "Пожалуйста, введите сообщение",
-                    messageMinLength: "Сообщение должно содержать минимум 10 символов",
-                    messageMaxLength: "Сообщение не должно превышать 1000 символов",
-                    privacyRequired: "Необходимо согласие на обработку персональных данных"
+                    nameRequired: "Please enter your name",
+                    nameMinLength: "Name must be at least 2 characters",
+                    nameMaxLength: "Name must not exceed 50 characters",
+                    phoneRequired: "Please enter your phone number",
+                    phoneInvalid: "Please enter a valid phone number",
+                    emailRequired: "Please enter your email",
+                    emailInvalid: "Please enter a valid email address",
+                    messageRequired: "Please enter a message",
+                    messageMinLength: "Message must be at least 10 characters",
+                    messageMaxLength: "Message must not exceed 1000 characters",
+                    privacyRequired: "Consent to the processing of personal data is required"
                 }
             }
         },
